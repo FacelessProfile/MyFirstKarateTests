@@ -1,0 +1,475 @@
+default
+GET
+/
+Read Root
+Parameters
+
+No parameters
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+GET
+/phonebook/create
+Create Phonebook
+Parameters
+
+No parameters
+Responses
+Curl
+
+curl -X 'GET' \
+  'http://193.169.128.81:8000/phonebook/create' \
+  -H 'accept: application/json'
+
+Request URL
+
+http://193.169.128.81:8000/phonebook/create
+
+Server response
+Code	Details
+200	
+Response body
+
+{
+  "message": "success",
+  "phonebook_id": "d1e5ae8f-6b88-11f1-86bc-0050560123a5"
+}
+
+Response headers
+
+ connection: close 
+ content-length: 75 
+ content-type: application/json 
+ date: Fri,19 Jun 2026 02:44:39 GMT 
+ server: uvicorn 
+
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+DELETE
+/phonebook/delete/{phonebook_id}
+Delete Phonebook
+Parameters
+Name	Description
+phonebook_id *
+string
+(path)
+	
+Responses
+Curl
+
+curl -X 'DELETE' \
+  'http://193.169.128.81:8000/phonebook/delete/91880dbc-6b81-11f1-a60e-0050560123a5' \
+  -H 'accept: application/json'
+
+Request URL
+
+http://193.169.128.81:8000/phonebook/delete/91880dbc-6b81-11f1-a60e-0050560123a5
+
+Server response
+Code	Details
+200	
+Response body
+
+{
+  "message": "success",
+  "phonebook_id": "91880dbc-6b81-11f1-a60e-0050560123a5"
+}
+
+Response headers
+
+ connection: close 
+ content-length: 75 
+ content-type: application/json 
+ date: Fri,19 Jun 2026 01:53:28 GMT 
+ server: uvicorn 
+
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+422	
+
+Validation Error
+Media type
+
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+
+	No links
+POST
+/{phonebook_id}/create
+Create Note
+Parameters
+Name	Description
+phonebook_id *
+any
+(path)
+	
+Request body
+
+{
+  "note_list": [
+    {
+      "id": "0",
+      "name": "Note",
+      "surname": "Test",
+      "number": 0,
+      "comment": "Some Test Note"
+    }
+  ]
+}
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/create' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "note_list": [
+    {
+      "id": "0",
+      "name": "Note",
+      "surname": "Test",
+      "number": 0,
+      "comment": "Some Test Note"
+    }
+  ]
+}'
+
+Request URL
+
+http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/create
+
+Server response
+Code	Details
+200	
+Response body
+
+{
+  "message": "success",
+  "note_id": [
+    "f84aa864-6b88-11f1-9078-0050560123a5"
+  ]
+}
+
+Response headers
+
+ connection: close 
+ content-length: 72 
+ content-type: application/json 
+ date: Fri,19 Jun 2026 02:45:45 GMT 
+ server: uvicorn 
+
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+422	
+
+Validation Error
+Media type
+
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+
+	No links
+DELETE
+/{phonebook_id}/delete/{note_id}
+Delete Note
+Parameters
+Name	Description
+phonebook_id *
+any
+(path)
+	
+note_id *
+any
+(path)
+	
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+422	
+
+Validation Error
+Media type
+
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+
+	No links
+POST
+/{phonebook_id}/update/{note_id}
+Update Note
+Parameters
+Name	Description
+phonebook_id *
+any
+(path)
+	
+note_id *
+any
+(path)
+	
+Request body
+
+{
+  "comment":"some new text"
+}
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/update/f84aa864-6b88-11f1-9078-0050560123a5' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "comment":"some new text"
+}'
+
+Request URL
+
+http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/update/f84aa864-6b88-11f1-9078-0050560123a5
+
+Server response
+Code	Details
+200	
+Response body
+
+{
+  "message": "success",
+  "note_id": "f84aa864-6b88-11f1-9078-0050560123a5"
+}
+
+Response headers
+
+ connection: close 
+ content-length: 70 
+ content-type: application/json 
+ date: Fri,19 Jun 2026 03:03:23 GMT 
+ server: uvicorn 
+
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+422	
+
+Validation Error
+Media type
+
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+
+	No links
+POST
+/{phonebook_id}/search
+Search Note
+Parameters
+Name	Description
+phonebook_id *
+any
+(path)
+	
+Request body
+
+{
+  "pattern": "' OR '1'='1"
+}
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/search' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "pattern": "'\'' OR '\''1'\''='\''1"
+}'
+
+Request URL
+
+http://193.169.128.81:8000/d1e5ae8f-6b88-11f1-86bc-0050560123a5/search
+
+Server response
+Code	Details
+404
+Undocumented
+	
+
+Error: Not Found
+Response body
+
+{
+  "detail": "Note not found"
+}
+
+Response headers
+
+ connection: close 
+ content-length: 27 
+ content-type: application/json 
+ date: Fri,19 Jun 2026 04:12:20 GMT 
+ server: uvicorn 
+
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+Media type
+Controls Accept header.
+
+"string"
+
+	No links
+422	
+
+Validation Error
+Media type
+
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+
+	No links
+GET
+/{phonebook_id}/list
+List Notes
+Schemas
+object
+object
+
+    array<object>
+    object
+        id
+        string
+        name
+        string
+        surname
+        string
+        number
+        integer
+        comment
+        string
+
+object
+
+    id
+    string
+    name
+    string
+    surname
+    string
+    number
+    integer
+    comment
+    string
+
+object

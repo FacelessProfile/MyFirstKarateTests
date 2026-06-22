@@ -1,0 +1,9 @@
+{ "note_list":
+   [{ 
+    "id": "0",
+     "name": "FloatTest",
+     "surname": "Mutation", 
+     "number": 88.88,
+     "comment": "Testing float insertion into integer field"
+     }]
+}

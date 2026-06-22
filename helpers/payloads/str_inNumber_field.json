@@ -1,0 +1,11 @@
+{
+  "note_list": [
+    {
+      "id": "0",
+      "name": "Test",
+      "surname": "Test",
+      "number": "Validation Test - string input in integer field",
+      "comment": "Data type test"
+    }
+  ]
+}

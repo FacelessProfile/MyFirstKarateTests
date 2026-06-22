@@ -1,0 +1,10 @@
+{
+ "note_list":
+    [{
+     "id": "0",
+     "name": "",
+     "surname": "",
+     "number": 123,
+     "comment": "Empty strings"
+     }]
+}
